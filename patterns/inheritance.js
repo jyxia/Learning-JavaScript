@@ -70,3 +70,27 @@ customObject.price = 19.99;
 
 delete customObject.price;
 console.log(customObject.get_price()); // 20.99
+
+
+/// what about this tricky JavaScript
+function Person() {
+  var firstName = "John";
+  this.lastName = "Doe"
+}
+
+Person.prototype.sayName = function() {
+  return name; // name is ""
+};
+
+Person.prototype.sayLastName = function() {
+  return this.lastName; // this will return lastname as normal
+};
+
+Person.prototype.sayFirstName = function() {
+  return firstName; // error due to the local variable `firstName`
+};
+
+var p = new Person();
+console.log(p.sayName()); // return ""!!! `name` is an inheritanted property from Object???
+console.log(p.sayLastName()); // return lastName
+console.log(p.sayFirstName()); // error, firstName not defined

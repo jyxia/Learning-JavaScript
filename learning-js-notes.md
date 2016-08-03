@@ -2,7 +2,7 @@
 Hoisting is JavaScript's default behavior of moving declarations to the top.
 * No matter where you defined a `var`, (`var` statement), these variables act as if they were *declared* at the top of the function.
 * Same for function declaration and name function expression, but not the function expression.
-* JavaScript only hoists declarations, not *initializations*.
+* JavaScript only hoists declarations, not *initializations*. (e.g. if define `var a = 10;` at the bottom of a function, but `a` is returned before this declarations, the output is `undefined` since `a` is not initialized);
 
 #### Event Bubbling
 * inner -> outer
@@ -16,8 +16,8 @@ Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 #### Functions are first-class objects
 * A function is an instance of `Object` type
-* A function can have properties and methods, even its own constructor
-* A function can be assigned to a variable
+* A function can have properties and methods, even its own constructor.
+* A function can be assigned to a variable. So, functions are values.
 * A function can be passed as an argument of a function
 
 #### `this` keyword
@@ -50,10 +50,10 @@ But `this` is passed to the function. (widely used for event listener callbacks)
 * First, consider the length of properties and if they have same properties.
 * Second, you will check each property whether they have the same value.
 
-#### Prototypal inheritance?
+#### Prototypal inheritance? (see [patterns](./patterns))
 * You have an object that you want to reuse and you want to create a second object that gets its functionality from the first one!
-* `Object.create(obj, {})`
-* example
+* `Object.create(obj, {})` create a new object with `obj`
+* e.g. (Prototypal inheritance)
 ```javascript
   function Parent(name) {
     this.name = name;
@@ -82,4 +82,13 @@ send the message to iframe on another domain.
 To receive
 ```javascript
 window.addEventListener('message',function(event) {});
+```
+
+#### `slice` vs `splice`
+* `slice(start, end)`: returns a new array. *the original array is not changed*
+* `splice(position, howmany, item1, ..., itemx)`, `position` is the position to add or remove. `howmany` to be removed. If it is 0, no items will be removed, then just insert the items into the position.
+e.g.
+``` javascript
+var arr = ['x', 'y', 'z'];
+arr.splice(2, 0, 'a'); // arr = ['x', 'y', 'a', 'z'];
 ```

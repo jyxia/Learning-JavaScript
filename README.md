@@ -1,2 +1,2 @@
 # Learning-JavaScript
-Some notes when I was learning JavaScript
+Some notes after I learned JavaScript.
