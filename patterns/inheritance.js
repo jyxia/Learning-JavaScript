@@ -47,10 +47,16 @@ var grizzly = Object.create(bear, {
     value: function() {
       console.log("this is a overwritten sayName " + this.name);
     }
+  },
+  roar: {
+    value: function() {
+      console.log(this.name + " is roaring")
+    }
   }
 });
 
 grizzly.sayName();
+grizzly.roar(); // print out "grizzly is roaring"
 
 /*
   delete test
