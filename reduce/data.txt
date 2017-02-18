@@ -1,0 +1,6 @@
+mark john waffle 80 2
+mark john blender 200 1
+mark john knife 10 4
+Nick Smith waffle 80 1
+Nick Smith knife 10 2
+Nick Smith pot 20 3
