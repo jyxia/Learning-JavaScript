@@ -30,9 +30,9 @@ var endorsements = [
 //  { skill: 'html', user: [ 'Sue' ], count: 1 }
 //];
 
-var results = endorsements.reduce((result, endorsement) => {
+var results = endorsements.reduce((results, endorsement) => {
   var newSkill = true;
-  result.forEach((res) => {
+  results.forEach((res) => {
     if (res.skill === endorsement.skill) {
       res.user.push(endorsement.user);
       res.count++;
@@ -41,14 +41,36 @@ var results = endorsements.reduce((result, endorsement) => {
   });
 
   if (newSkill) {
-    result.push({
+    results.push({
       skill: endorsement.skill,
       user: [endorsement.user],
       count: 1
     });
   }
 
-  return result;
+  return results;
+}, []);
+
+console.log(results);
+
+// an updated version using find
+var results = endorsements.reduce((results, endorsement) => {
+  var updateEntry = results.find(result => {
+    return result.skill === endorsement.skill;
+  });
+
+  if (updateEntry) {
+    updateEntry.user.push(endorsement.user);
+    updateEntry.count++;
+  } else {
+    results.push({
+      skill: endorsement.skill,
+      user: [endorsement.user],
+      count: 1
+    });
+  }
+
+  return results;
 }, []);
 
 console.log(results);
