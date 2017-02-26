@@ -10,6 +10,7 @@ function b() {
 }
 b();
 console.log(a);  // 1
+
 // second example
 var a = 1;
 function b() {

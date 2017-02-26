@@ -49,7 +49,7 @@ It tells the browser what the sizing properties (width and height) should includ
 
 ### Overflow
 * Overflow property deals with the content if content size exceeds the allocated size for the content. You can make extra content visible, hidden, scroll or auto (viewport default behavior).
-* `overflow: hidden` create a new block formatting context.
+* `overflow: hidden` create a new block formatting context. Using this can clear floating height problem.
 
 ### `visibility` vs `display`
 * `visibility: hidden`. Element is not visible, but takes the space. When page loads, it doesn't get downloaded into the browser??

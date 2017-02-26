@@ -64,6 +64,9 @@ But `this` is passed to the function. (widely used for event listener callbacks)
   Child.prototype = Object.create(Parent.prototype);
 ```
 
+#### Prototypal inheritance vs Classical inheritance
+* Prototypal: it is a *delegation*. If an object is lacking a property, then it goes to its prototype, and so on until the process finally bottoms out with `Object.prototype`. If the desired property exists nowhere in the prototype chain, then the result is `undefined`. This is called `delegation`.
+
 #### Native objects vs. Host objects
 * Native objects: object in an ECMAScript implementation whose semantics are fully defined by this specification rather than by the host environment.
   * e.g. Math, Date etc.
