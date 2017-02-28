@@ -95,3 +95,20 @@ e.g.
 var arr = ['x', 'y', 'z'];
 arr.splice(2, 0, 'a'); // arr = ['x', 'y', 'a', 'z'];
 ```
+#### `__proto__` vs. `prototype`
+* object has `__proto__`, is used in the lookup chain to resolve methods. For example,
+```javascript
+ var dog = { breed: 'bulldog' };
+ var myDog = { name: 'mydog' };
+ Object.setPrototypeOf(myDog, dog);
+ 
+ console.log(myDog.__proto__); // Object { breed: 'bulldog' }
+ console.log(myDog.prototype); // undefined
+```
+ 
+* function has `prototype` only exists on functions, in case you want to use those objects as constructors passed to the `new` keyword.
+
+
+#### Promise vs. callback
+* Promise is composable. You can combine all promises into one array. For exmaple, `Promise.all[promise1, promise2...]`
+* Promise is syntactic sugar for callbacks 
