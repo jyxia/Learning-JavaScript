@@ -30,6 +30,24 @@ var endorsements = [
 //  { skill: 'html', user: [ 'Sue' ], count: 1 }
 //];
 
+var transformedData = endorsements.reduce((results, endorsement) => {
+  var existSkill = results.find(res => res.skill === endorsement.skill);
+
+  if (existSkill) {
+    existSkill.user.push(endorsement.user);
+    existSkill.count++;
+  } else {
+    results.push({
+      skill: endorsement.skill,
+      user: [endorsement.user],
+      count: 1
+    })
+  }
+
+  return results;
+}, []);
+console.log(transformedData);
+
 var results = endorsements.reduce((results, endorsement) => {
   var newSkill = true;
   results.forEach((res) => {

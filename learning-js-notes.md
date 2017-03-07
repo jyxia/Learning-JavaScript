@@ -41,7 +41,7 @@ But `this` is passed to the function. (widely used for event listener callbacks)
 
 #### `null` vs. `undefined`
 * `undefined` means, value of the variable is not defined. undefined is a type with exactly one value: undefined.
-* `null` means empty or non-existent value which is used by programmers to indicate “no value”. *primitive* type.
+* `null` means empty or non-existent value which is used by programmers to indicate “no value”. *primitive* type. `typeof(null) === 'object'`
 
 #### JavaScript primitive types?
 `number`, `string`, `boolean`, `null`, `undefined`
@@ -101,14 +101,14 @@ arr.splice(2, 0, 'a'); // arr = ['x', 'y', 'a', 'z'];
  var dog = { breed: 'bulldog' };
  var myDog = { name: 'mydog' };
  Object.setPrototypeOf(myDog, dog);
- 
+
  console.log(myDog.__proto__); // Object { breed: 'bulldog' }
  console.log(myDog.prototype); // undefined
 ```
- 
-* function has `prototype` only exists on functions, in case you want to use those objects as constructors passed to the `new` keyword.
+
+* **function** has `prototype` only exists on functions, in case you want to use those objects as constructors passed to the `new` keyword.
 
 
 #### Promise vs. callback
-* Promise is composable. You can combine all promises into one array. For exmaple, `Promise.all[promise1, promise2...]`
-* Promise is syntactic sugar for callbacks 
+* Promise is composable. You can combine all promises into one array. For example, `Promise.all[promise1, promise2...]`
+* Promise is syntactic sugar for callbacks
