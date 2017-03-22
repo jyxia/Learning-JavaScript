@@ -112,3 +112,4 @@ arr.splice(2, 0, 'a'); // arr = ['x', 'y', 'a', 'z'];
 #### Promise vs. callback
 * Promise is composable. You can combine all promises into one array. For example, `Promise.all[promise1, promise2...]`
 * Promise is syntactic sugar for callbacks
+* Promise is easy for error handlings. `catch`.
